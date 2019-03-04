@@ -21,6 +21,9 @@ Calculator.prototype = {
 
   divide: function(number){
     this.runningTotal = parseFloat(this.previousTotal) / parseFloat(number);
+    if (this.runningTotal == "Infinity"){
+      this.runningTotal = 0
+    }
   },
 
   numberClick: function(number) {
@@ -68,6 +71,7 @@ Calculator.prototype = {
     }
     // replace the previous total with the current running total and flag that a
     // new total has been calculated
+
 
     this.previousTotal = this.runningTotal;
     this.newTotal = true;
